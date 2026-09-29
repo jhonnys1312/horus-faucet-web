@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horus Faucet - JHOAL Token</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header>
+      <img src="images/logo.png" alt="Horus Faucet" class="logo" onerror="this.style.display='none'">
+      <h1>HORUS FAUCET</h1>
+      <div class="subtitle">⚱ La ofrenda del Dios Horus ⚱</div>
+    </header>
+
+    <!-- BANNER -->
+    <img src="images/banner.jpg" alt="Horus Faucet Banner" class="banner" onerror="this.style.display='none'">
+
+    <!-- ESTADÍSTICAS EN VIVO -->
+    <section>
+      <h2>📊 Estadísticas en Vivo</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="totalJugadores">--</div>
+          <div class="stat-label">Jugadores Totales</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="enVivo">--</div>
+          <div class="stat-label">En Vivo Ahora</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="totalJHOAL">--</div>
+          <div class="stat-label">JHOAL Circular</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="totalQuemado">--</div>
+          <div class="stat-label">JHOAL Quemado</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL TOKEN -->
+    <section>
+      <h2>💎 El Token JHOAL</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="precioJHOAL">--</div>
+          <div class="stat-label">Precio USD</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="poolToques">--</div>
+          <div class="stat-label">Pool Actual</div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 16px;">
+        <a href="#" id="linkContrato" target="_blank" class="btn">📍 Ver Contrato</a>
+        <a href="#" id="linkPancake" target="_blank" class="btn btn-verde">🥞 Comprar</a>
+      </div>
+    </section>
+
+    <!-- LOS TOQUES -->
+    <section>
+      <h2>🎯 Los Toques</h2>
+      <p style="text-align: center; color: #a89060; font-size: 13px; margin-bottom: 16px;">
+        📈 Predecí el precio de BTC en 3 minutos<br>
+        💰 Pool se reparte entre los ganadores según cercanía<br>
+        🔥 Lo que sobra se quema cada 24h
+      </p>
+      <div class="toques-info">
+        <div class="toques-card">
+          <div class="toques-value" id="btcPrice">--</div>
+          <div class="stat-label">BTC Ahora</div>
+        </div>
+        <div class="toques-card">
+          <div class="toques-value" id="toquesPool">--</div>
+          <div class="stat-label">Pool JHOAL</div>
+        </div>
+        <div class="toques-card">
+          <div class="toques-value" id="toquesRonda">--</div>
+          <div class="stat-label">Ronda</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO GANAR -->
+    <section>
+      <h2>💰 ¿Cómo Ganar JHOAL?</h2>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <img src="images/huerto.jpg" alt="Huerto de Horus" style="max-width: 100%; border-radius: 12px; border: 2px solid #d4af37;" onerror="this.style.display='none'">
+      </div>
+      <div style="font-size: 14px; line-height: 1.8; color: #f5f0e1;">
+        🚰 <strong>Faucet:</strong> 1 JHOAL cada 30 minutos<br>
+        📺 <strong>Anuncios:</strong> 5 JHOAL por video<br>
+        🎲 <strong>Dados:</strong> Multiplicá tus JHOAL (x1.1 a x10)<br>
+        🌱 <strong>Huerto:</strong> Plantá y cosechá frutos<br>
+        🔮 <strong>Toques:</strong> Predecí el precio de BTC<br>
+        🎁 <strong>Referidos:</strong> 1000 JHOAL por amigo
+      </div>
+    </section>
+
+    <!-- HISTORIAL PÚBLICO -->
+    <section>
+      <h2>📜 Historial Público</h2>
+      <div class="history-list" id="historyList">
+        <div style="text-align: center; color: #6b5a3a; padding: 20px;">Cargando historial...</div>
+      </div>
+    </section>
+
+    <!-- RANKING -->
+    <section>
+      <h2>🏆 Ranking Top 10</h2>
+      <div id="rankingList">
+        <div style="text-align: center; color: #6b5a3a; padding: 20px;">Cargando ranking...</div>
+      </div>
+    </section>
+
+    <!-- ENLACES -->
+    <section>
+      <h2>🔗 Enlaces</h2>
+      <div style="text-align: center;">
+        <a href="https://t.me/Jhoal_faucetbot" target="_blank" class="btn">🎮 Jugar</a>
+        <a href="https://t.me/horusfaucet" target="_blank" class="btn btn-azul">💬 Grupo</a>
+        <a href="https://t.me/JhoalSupportbot" target="_blank" class="btn btn-verde">📩 Soporte</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div style="margin-bottom: 10px;">
+        <a href="#" id="footerBscScan" target="_blank">📍 Contrato</a>
+        <a href="#" id="footerPancake" target="_blank">🥞 PancakeSwap</a>
+      </div>
+      <div>🏛 Horus Faucet © 2026</div>
+      <div class="donaciones">
+        💝 Apoyá el proyecto: 0x9185...A1D3 
+        <button class="copy-btn" onclick="copiarDonacion()">📋</button>
+      </div>
+      <div style="margin-top: 8px; font-size: 11px; color: #6b5a3a;">
+        JHOAL es un token de utilidad, no una inversión.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script>
+    // ===== CARGAR DATOS =====
+    async function cargarTodo() {
+      // Configurar links
+      document.getElementById('linkContrato').href = CONFIG.bscscan;
+      document.getElementById('linkPancake').href = CONFIG.pancakeswap;
+      document.getElementById('footerBscScan').href = CONFIG.bscscan;
+      document.getElementById('footerPancake').href = CONFIG.pancakeswap;
+
+      // Cargar estadísticas
+      const stats = await getStats();
+      document.getElementById('totalJugadores').textContent = formatearNumero(stats.totalJugadores);
+      document.getElementById('enVivo').textContent = formatearNumero(stats.enVivo);
+      document.getElementById('totalJHOAL').textContent = formatearNumero(stats.totalJHOAL);
+      document.getElementById('totalQuemado').textContent = formatearNumero(stats.totalQuemado);
+      document.getElementById('poolToques').textContent = formatearNumero(stats.poolActual);
+
+      // Cargar precio JHOAL
+      const price = await getJhoalPrice();
+      document.getElementById('precioJHOAL').textContent = price > 0 ? '$' + price.toFixed(8) : '--';
+
+      // Cargar toques
+      const toques = await getToques();
+      document.getElementById('btcPrice').textContent = toques.btcPrice > 0 ? '$' + toques.btcPrice.toLocaleString('en-US', {maximumFractionDigits: 0}) : '--';
+      document.getElementById('toquesPool').textContent = formatearNumero(toques.poolActual);
+      document.getElementById('toquesRonda').textContent = '#' + toques.rondaActual;
+
+      // Cargar historial
+      const history = await getHistory();
+      const historyList = document.getElementById('historyList');
+      if (history.length === 0) {
+        historyList.innerHTML = '<div style="text-align: center; color: #6b5a3a; padding: 20px;">No hay eventos aún</div>';
+      } else {
+        historyList.innerHTML = history.map(h => `
+          <div class="history-item">
+            <span class="history-emoji">${h.emoji}</span>
+            <span class="history-id">${h.userId}</span>
+            <span class="history-desc">${h.descripcion}</span>
+            ${h.amount !== 0 ? `<span class="history-amount">${h.amount > 0 ? '+' : ''}${h.amount.toFixed(0)}</span>` : ''}
+            <span class="history-time">${tiempoAgo(h.tiempo)}</span>
+          </div>
+        `).join('');
+      }
+
+      // Cargar ranking
+      const ranking = await getRanking();
+      const rankingList = document.getElementById('rankingList');
+      if (ranking.length === 0) {
+        rankingList.innerHTML = '<div style="text-align: center; color: #6b5a3a; padding: 20px;">Sin datos aún</div>';
+      } else {
+        const medals = ['🥇', '🥈', '🥉'];
+        rankingList.innerHTML = ranking.map(r => `
+          <div class="ranking-item">
+            <span class="ranking-pos">${medals[r.posicion - 1] || '#' + r.posicion}</span>
+            <span class="ranking-id">${r.userId}</span>
+            <span class="ranking-count">${r.faucets} faucets</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    // ===== COPIAR DIRECCIÓN DE DONACIÓN =====
+    function copiarDonacion() {
+      navigator.clipboard.writeText(CONFIG.donaciones).then(() => {
+        const btn = event.target;
+        const original = btn.textContent;
+        btn.textContent = '✅';
+        setTimeout(() => { btn.textContent = original; }, 1500);
+      });
+    }
+
+    // ===== CARGAR AL INICIO =====
+    cargarTodo();
+
+    // ===== ACTUALIZAR CADA 30 SEGUNDOS =====
+    setInterval(cargarTodo, 30000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background: #0a0605;
+  color: #f5f0e1;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url('images/fondo.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 6, 5, 0.92);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 2px solid #d4af37;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #d4af37;
+  letter-spacing: 4px;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #a89060;
+  letter-spacing: 3px;
+  font-style: italic;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+  margin-bottom: 30px;
+}
+
+/* ===== SECCIONES ===== */
+section {
+  background: rgba(30, 15, 10, 0.85);
+  border: 2px solid #d4af37;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+section h2 {
+  color: #d4af37;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ===== ESTADÍSTICAS ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 44, 31, 0.1));
+  border: 2px solid rgba(212, 175, 55, 0.5);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d4af37;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #a89060;
+  letter-spacing: 2px;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #d4af37, #8b6f1a);
+  color: #0a0605;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  cursor: pointer;
+  margin: 4px;
+  font-family: 'Georgia', serif;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-azul { background: linear-gradient(135deg, #2196f3, #1565c0); color: white; }
+.btn-verde { background: linear-gradient(135deg, #00c853, #00843d); color: white; }
+.btn-morado { background: linear-gradient(135deg, #9b59b6, #6c3483); color: white; }
+
+/* ===== HISTORIAL ===== */
+.history-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.history-emoji { font-size: 20px; }
+.history-id { color: #a89060; font-family: monospace; }
+.history-desc { flex: 1; color: #f5f0e1; }
+.history-amount { color: #00c853; font-weight: bold; }
+.history-time { color: #6b5a3a; font-size: 11px; font-style: italic; }
+
+/* ===== RANKING ===== */
+.ranking-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(212, 175, 55, 0.05);
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.ranking-pos {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d4af37;
+  width: 40px;
+}
+
+.ranking-id { flex: 1; font-family: monospace; color: #a89060; }
+.ranking-count { color: #d4af37; font-weight: bold; }
+
+/* ===== TOQUES ===== */
+.toques-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.toques-card {
+  background: rgba(155, 89, 182, 0.1);
+  border: 2px solid rgba(155, 89, 182, 0.5);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.toques-value {
+  font-size: 24px;
+  color: #c77dff;
+  font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 2px solid #d4af37;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #a89060;
+}
+
+footer a {
+  color: #d4af37;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.donaciones {
+  font-size: 11px;
+  color: #6b5a3a;
+  margin-top: 12px;
+  font-family: monospace;
+}
+
+.copy-btn {
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 11px;
+  color: #d4af37;
+  margin-left: 6px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  h1 { font-size: 24px; }
+  .stat-value { font-size: 24px; }
+  section { padding: 16px; }
+  .btn { padding: 10px 16px; font-size: 11px; }
+}
