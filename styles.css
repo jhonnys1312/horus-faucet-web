@@ -33,47 +33,100 @@ body::before {
   padding: 20px;
 }
 
-/* ===== HEADER ===== */
-header {
-  text-align: center;
-  padding: 30px 0;
-  border-bottom: 2px solid #d4af37;
-  margin-bottom: 30px;
-}
-
-.logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 3px solid #d4af37;
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
-  margin-bottom: 15px;
-}
-
-h1 {
-  font-size: 28px;
-  color: #d4af37;
-  letter-spacing: 4px;
-  text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
-  margin-bottom: 8px;
-}
-
-.subtitle {
-  font-size: 14px;
-  color: #a89060;
-  letter-spacing: 3px;
-  font-style: italic;
-}
-
-/* ===== BANNER ===== */
-.banner {
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
   width: 100%;
+  min-height: 600px;
   border-radius: 16px;
+  overflow: hidden;
   border: 2px solid #d4af37;
   box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
   margin-bottom: 30px;
-  max-height:250px;
-  object-fit:cover;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, rgba(10,6,5,0.92) 0%, rgba(10,6,5,0.75) 50%, rgba(10,6,5,0.6) 100%);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.hero-lang {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.hero-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+  margin-bottom: 16px;
+  background: #0a0605;
+}
+
+.hero-title {
+  font-size: 38px;
+  color: #d4af37;
+  letter-spacing: 5px;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.9);
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  color: #c77dff;
+  letter-spacing: 2px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  max-width: 700px;
+  color: #f5f0e1;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.hero-description p {
+  margin-bottom: 12px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* ===== SECCIONES ===== */
@@ -81,7 +134,7 @@ section {
   background: rgba(30, 15, 10, 0.85);
   border: 2px solid #d4af37;
   border-radius: 16px;
-  padding: 18px;
+  padding: 24px;
   margin-bottom: 24px;
   box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
 }
@@ -98,7 +151,7 @@ section h2 {
 /* ===== ESTADÍSTICAS ===== */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
 }
 
@@ -111,7 +164,7 @@ section h2 {
 }
 
 .stat-value {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   color: #d4af37;
   text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
@@ -255,29 +308,14 @@ footer a {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
-  h1 { font-size: 24px; }
+  .hero { min-height: 500px; }
+  .hero-overlay { min-height: 500px; padding: 30px 20px; }
+  .hero-title { font-size: 26px; letter-spacing: 3px; }
+  .hero-subtitle { font-size: 11px; }
+  .hero-description { font-size: 11px; }
+  .hero-logo { width: 70px; height: 70px; }
+  section h2 { font-size: 18px; }
   .stat-value { font-size: 24px; }
   section { padding: 16px; }
   .btn { padding: 10px 16px; font-size: 11px; }
-}
-/* ===== BOTÓN DE IDIOMA ===== */
-.lang-btn {
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 8px;
-  color: #d4af37;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  font-family: 'Georgia', serif;
-  letter-spacing: 1px;
-}
-
-.lang-btn:hover {
-  background: rgba(212, 175, 55, 0.3);
-}
-
-.lang-btn:active {
-  transform: scale(0.95);
 }
