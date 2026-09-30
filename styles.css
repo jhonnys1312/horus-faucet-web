@@ -296,14 +296,21 @@ footer a {
 }
 
 .copy-btn {
-  background: rgba(212, 175, 55, 0.2);
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.7);
   border-radius: 6px;
-  padding: 4px 8px;
+  padding: 5px 12px;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 13px;
   color: #d4af37;
-  margin-left: 6px;
+  margin-left: 8px;
+  font-weight: bold;
+  transition: background 0.2s;
+  vertical-align: middle;
+}
+
+.copy-btn:hover {
+  background: rgba(212, 175, 55, 0.5);
 }
 
 /* ===== RESPONSIVE ===== */
