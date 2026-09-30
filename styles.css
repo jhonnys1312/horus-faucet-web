@@ -72,6 +72,8 @@ h1 {
   border: 2px solid #d4af37;
   box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
   margin-bottom: 30px;
+  max-height:250px;
+  object-fit:cover;
 }
 
 /* ===== SECCIONES ===== */
