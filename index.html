@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horus Faucet - JHOAL Token</title>
+  <title>Horus Faucet - Ecosistema JHOAL Token</title>
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -14,20 +14,22 @@
     <!-- ===== HERO SECTION ===== -->
     <section class="hero">
       <img src="images/banner.jpg" class="hero-bg" alt="Horus Faucet">
+      
+      <button id="langBtn" onclick="toggleLang()" class="hero-lang">🌐 EN</button>
+      
       <div class="hero-overlay">
-        <button id="langBtn" onclick="toggleLang()" class="hero-lang">🌐 EN</button>
-
         <img src="images/logo.png" class="hero-logo" alt="Horus Faucet" onerror="this.style.display='none'">
-
-        <h1 class="hero-title" data-i18n="heroTitle">🏛 HORUS FAUCET</h1>
+        
+        <h1 class="hero-title">🏛 HORUS FAUCET</h1>
         <div class="hero-subtitle" data-i18n="heroSub">⚱ Ecosistema JHOAL Token - La Ofrenda del Dios Horus ⚱</div>
-
+        
         <div class="hero-description">
           <p data-i18n="heroDesc1">En las tierras del Nilo, donde nace el sol y los dioses gobiernan el destino de los hombres, nació JHOAL. No es un simple token. Es la ofrenda digital que fluye por todo el ecosistema de Horus Faucet.</p>
           <p data-i18n="heroDesc2">JHOAL es el token oficial de Horus Faucet, una Mini App de Telegram donde podés ganar criptomonedas GRATIS sin invertir un solo peso. No necesitás descargar nada: solo abrís el bot en Telegram, entrás a la app y empezás a ganar.</p>
           <p data-i18n="heroDesc3">JHOAL no es solo una moneda. Es la llave que abre las puertas del ecosistema de Horus Faucet. Con él podés jugar, plantar, predecir, ganar y retirar a tu wallet personal (MetaMask, Trust Wallet).</p>
           <p data-i18n="heroDesc4">En resumen: JHOAL es el corazón de Horus Faucet, una Mini App de Telegram que está llevando las criptomonedas a todo el mundo, gratis y sin complicaciones.</p>
         </div>
+      </div>
     </section>
 
     <!-- ===== ESTADÍSTICAS EN VIVO ===== -->
@@ -53,23 +55,23 @@
       </div>
     </section>
 
-    <!-- ===== EL TOKEN ===== -->
+    <!-- ===== EL TOKEN JHOAL ===== -->
     <section style="text-align: center;">
       <h2 data-i18n="token">💎 El Token JHOAL</h2>
-
+      
       <div style="margin: 20px 0;">
         <div id="precioJHOAL" style="font-size: 36px; font-weight: bold; color: #d4af37; text-shadow: 0 0 15px rgba(212, 175, 55, 0.8); margin-bottom: 8px;">--</div>
         <div style="font-size: 12px; color: #a89060; letter-spacing: 3px; text-transform: uppercase;" data-i18n="precio">Precio en Vivo</div>
       </div>
 
       <div style="margin-top: 24px;">
-        <a href="#" id="linkContrato" target="_blank" class="btn">📍 <span data-i18n="verContrato">Ver Contrato</span></a>
-        <a href="#" id="linkPancake" target="_blank" class="btn btn-verde">🥞 <span data-i18n="comprar">Comprar</span></a>
+        <a href="#" id="linkContrato" target="_blank" class="btn" data-i18n="verContrato">📍 Ver Contrato</a>
+        <a href="#" id="linkPancake" target="_blank" class="btn btn-verde" data-i18n="comprar">🥞 Comprar</a>
       </div>
 
       <div style="margin-top: 20px;">
-        <a href="#" id="linkPancakeSmall" target="_blank" style="color: #a89060; font-size: 12px; text-decoration: none; letter-spacing: 1px;">
-          🥞 <span data-i18n="verPancake">Ver en PancakeSwap</span>
+        <a href="#" id="linkPancakeSmall" target="_blank" style="color: #a89060; font-size: 12px; text-decoration: none; letter-spacing: 1px;" data-i18n="verPancake">
+          🥞 Ver en PancakeSwap
         </a>
       </div>
     </section>
@@ -77,12 +79,12 @@
     <!-- ===== PREDICCIÓN DE HORUS ===== -->
     <section>
       <h2 data-i18n="prediccion">🔮 PREDICCIÓN DE HORUS</h2>
-
-      <div style="text-align: center; color: #f5f0e1; font-size: 14px; line-height: 1.8; margin-bottom: 24px; background: rgba(155, 89, 182, 0.1); border: 2px solid rgba(155, 89, 182, 0.5); border-radius: 12px; padding: 18px;">
-        <p data-i18n="predDesc1">📈 Predecí el <strong>precio exacto</strong> de BTC en 3 minutos</p>
-        <p data-i18n="predDesc2">🎯 <strong>1 predicción gratis</strong> por ronda (mirá un anuncio)</p>
-        <p data-i18n="predDesc3">💰 Pool se reparte entre los ganadores según cercanía</p>
-        <p data-i18n="predDesc4">🔥 Lo que sobra se quema cada 24h</p>
+      
+      <div style="text-align: center; color: #f5f0e1; font-size: 13px; line-height: 1.8; margin-bottom: 20px;">
+        <p data-i18n="predDesc">📈 Predecí el precio exacto de BTC en 3 minutos<br>
+        🎯 1 predicción gratis por ronda (mirá un anuncio)<br>
+        💰 Pool se reparte entre los ganadores según cercanía<br>
+        🔥 Lo que sobra se quema cada 24h</p>
       </div>
 
       <div class="toques-info">
@@ -101,19 +103,21 @@
       </div>
     </section>
 
-    <!-- ===== CÓMO GANAR ===== -->
+    <!-- ===== ¿CÓMO GANAR JHOAL? ===== -->
     <section>
       <h2 data-i18n="comoGanar">💰 ¿Cómo Ganar JHOAL?</h2>
+      
       <div style="text-align: center; margin-bottom: 20px;">
         <img src="images/huerto.jpg" alt="Huerto de Horus" style="max-width: 100%; border-radius: 12px; border: 2px solid #d4af37;" onerror="this.style.display='none'">
       </div>
+      
       <div style="font-size: 14px; line-height: 1.8; color: #f5f0e1;">
-        <p data-i18n="ganar1">🚰 <strong>Faucet:</strong> 1 JHOAL cada 30 minutos</p>
-        <p data-i18n="ganar2">📺 <strong>Anuncios:</strong> 5 JHOAL por video</p>
-        <p data-i18n="ganar3">🎲 <strong>Dados:</strong> Multiplicá tus JHOAL (x1.1 a x10)</p>
-        <p data-i18n="ganar4">🌱 <strong>Huerto:</strong> Plantá y cosechá frutos</p>
-        <p data-i18n="ganar5">🔮 <strong>Predicciones:</strong> Predecí el precio de BTC</p>
-        <p data-i18n="ganar6">🎁 <strong>Referidos:</strong> 1000 JHOAL por amigo</p>
+        <p>🚰 <strong data-i18n="faucetTitulo">Faucet:</strong> <span data-i18n="faucetDesc">1 JHOAL cada 30 minutos</span></p>
+        <p>📺 <strong data-i18n="anunciosTitulo">Anuncios:</strong> <span data-i18n="anunciosDesc">5 JHOAL por video</span></p>
+        <p>🎲 <strong data-i18n="dadosTitulo">Dados:</strong> <span data-i18n="dadosDesc">Multiplicá tus JHOAL (x1.1 a x10)</span></p>
+        <p>🌱 <strong data-i18n="huertoTitulo">Huerto:</strong> <span data-i18n="huertoDesc">Plantá y cosechá frutos</span></p>
+        <p>🔮 <strong data-i18n="toquesTitulo">Predicciones:</strong> <span data-i18n="toquesDesc">Predecí el precio de BTC</span></p>
+        <p>🎁 <strong data-i18n="referidosTitulo">Referidos:</strong> <span data-i18n="referidosDesc">1000 JHOAL por amigo</span></p>
       </div>
     </section>
 
@@ -121,7 +125,7 @@
     <section>
       <h2 data-i18n="historial">📜 Historial Público</h2>
       <div class="history-list" id="historyList">
-        <div style="text-align: center; color: #6b5a3a; padding: 20px;" data-i18n="cargando">Cargando historial...</div>
+        <div style="text-align: center; color: #6b5a3a; padding: 20px;">Cargando...</div>
       </div>
     </section>
 
@@ -129,7 +133,7 @@
     <section>
       <h2 data-i18n="ranking">🏆 Ranking Top 10</h2>
       <div id="rankingList">
-        <div style="text-align: center; color: #6b5a3a; padding: 20px;" data-i18n="cargando">Cargando ranking...</div>
+        <div style="text-align: center; color: #6b5a3a; padding: 20px;">Cargando...</div>
       </div>
     </section>
 
@@ -137,9 +141,9 @@
     <section>
       <h2 data-i18n="enlaces">🔗 Enlaces</h2>
       <div style="text-align: center;">
-        <a href="https://t.me/Jhoal_faucetbot" target="_blank" class="btn">🎮 <span data-i18n="jugar">Jugar</span></a>
-        <a href="https://t.me/horusfaucet" target="_blank" class="btn btn-azul">💬 <span data-i18n="grupo">Grupo</span></a>
-        <a href="https://t.me/JhoalSupportbot" target="_blank" class="btn btn-verde">📩 <span data-i18n="soporte">Soporte</span></a>
+        <a href="https://t.me/Jhoal_faucetbot" target="_blank" class="btn" data-i18n="jugar">🎮 Jugar</a>
+        <a href="https://t.me/horusfaucet" target="_blank" class="btn btn-azul" data-i18n="grupo">💬 Grupo</a>
+        <a href="https://t.me/JhoalSupportbot" target="_blank" class="btn btn-verde" data-i18n="soporte">📩 Soporte</a>
       </div>
     </section>
 
@@ -150,13 +154,15 @@
         <a href="#" id="footerPancake" target="_blank">🥞 PancakeSwap</a>
       </div>
       <div>🏛 Horus Faucet © 2026</div>
+      
       <div class="donaciones" data-i18n="apoyar">
         💝 Apoyá el proyecto (Red BSC): 0x9185...A1D3 
-        <button class="copy-btn" onclick="copiarDonacion(event)">📋</button>
+        <button class="copy-btn" onclick="copiarDonacion()">📋</button>
       </div>
       <div style="font-size: 10px; color: #6b5a3a; margin-top: 4px;" data-i18n="aceptamos">
         Aceptamos BNB y cualquier token en la red BSC
       </div>
+      
       <div style="margin-top: 8px; font-size: 11px; color: #6b5a3a;" data-i18n="aviso">
         JHOAL es un token de utilidad, no una inversión.
       </div>
@@ -164,69 +170,98 @@
 
   </div>
 
+  <!-- Scripts -->
   <script src="config.js"></script>
   <script src="api.js"></script>
   <script>
-    // ===== SISTEMA DE IDIOMAS =====
+    // ===== TRADUCCIONES =====
     let idiomaActual = localStorage.getItem('idioma') || 'es';
 
     const traducciones = {
       es: {
-        heroTitle: '🏛 HORUS FAUCET',
         heroSub: '⚱ Ecosistema JHOAL Token - La Ofrenda del Dios Horus ⚱',
         heroDesc1: 'En las tierras del Nilo, donde nace el sol y los dioses gobiernan el destino de los hombres, nació JHOAL. No es un simple token. Es la ofrenda digital que fluye por todo el ecosistema de Horus Faucet.',
         heroDesc2: 'JHOAL es el token oficial de Horus Faucet, una Mini App de Telegram donde podés ganar criptomonedas GRATIS sin invertir un solo peso. No necesitás descargar nada: solo abrís el bot en Telegram, entrás a la app y empezás a ganar.',
         heroDesc3: 'JHOAL no es solo una moneda. Es la llave que abre las puertas del ecosistema de Horus Faucet. Con él podés jugar, plantar, predecir, ganar y retirar a tu wallet personal (MetaMask, Trust Wallet).',
         heroDesc4: 'En resumen: JHOAL es el corazón de Horus Faucet, una Mini App de Telegram que está llevando las criptomonedas a todo el mundo, gratis y sin complicaciones.',
-        jugarBtn: 'JUGAR AHORA', grupoBtn: 'GRUPO',
-        estadisticas: '📊 Estadísticas en Vivo', jugadores: 'Jugadores Totales', enVivo: 'En Vivo Ahora', jhoalCircular: 'JHOAL Circular', jhoalQuemado: 'JHOAL Quemado',
-        token: '💎 El Token JHOAL', precio: 'Precio en Vivo', verContrato: 'Ver Contrato', comprar: 'Comprar', verPancake: 'Ver en PancakeSwap',
+        estadisticas: '📊 Estadísticas en Vivo',
+        jugadores: 'Jugadores Totales',
+        enVivo: 'En Vivo Ahora',
+        jhoalCircular: 'JHOAL Circular',
+        jhoalQuemado: 'JHOAL Quemado',
+        token: '💎JHOAL',
+        precio: 'Precio en Vivo',
+        verContrato: '📍 Ver Contrato',
+        comprar: '🥞 Comprar',
+        verPancake: '🥞 Ver en PancakeSwap',
         prediccion: '🔮 PREDICCIÓN DE HORUS',
-        predDesc1: '📈 Predecí el <strong>precio exacto</strong> de BTC en 3 minutos',
-        predDesc2: '🎯 <strong>1 predicción gratis</strong> por ronda (mirá un anuncio)',
-        predDesc3: '💰 Pool se reparte entre los ganadores según cercanía',
-        predDesc4: '🔥 Lo que sobra se quema cada 24h',
-        btcAhora: 'BTC Ahora', poolJHOAL: 'Pool JHOAL', ronda: 'Ronda',
+        predDesc: '📈 Predecí el precio exacto de BTC en 3 minutos<br>🎯 1 predicción gratis por ronda (mirá un anuncio)<br>💰 Pool se reparte entre los ganadores según cercanía<br>🔥 Lo que sobra se quema cada 24h',
+        btcAhora: 'BTC Ahora',
+        poolJHOAL: 'Pool JHOAL',
+        ronda: 'Ronda',
         comoGanar: '💰 ¿Cómo Ganar JHOAL?',
-        ganar1: '🚰 <strong>Faucet:</strong> 1 JHOAL cada 30 minutos',
-        ganar2: '📺 <strong>Anuncios:</strong> 5 JHOAL por video',
-        ganar3: '🎲 <strong>Dados:</strong> Multiplicá tus JHOAL (x1.1 a x10)',
-        ganar4: '🌱 <strong>Huerto:</strong> Plantá y cosechá frutos',
-        ganar5: '🔮 <strong>Predicciones:</strong> Predecí el precio de BTC',
-        ganar6: '🎁 <strong>Referidos:</strong> 1000 JHOAL por amigo',
-        historial: '📜 Historial Público', cargando: 'Cargando...',
+        faucetTitulo: 'Faucet:',
+        faucetDesc: '1 JHOAL cada 30 minutos',
+        anunciosTitulo: 'Anuncios:',
+        anunciosDesc: '5 JHOAL por video',
+        dadosTitulo: 'Dados:',
+        dadosDesc: 'Multiplicá tus JHOAL (x1.1 a x10)',
+        huertoTitulo: 'Huerto:',
+        huertoDesc: 'Plantá y cosechá frutos',
+        toquesTitulo: 'Predicciones:',
+        toquesDesc: 'Predecí el precio de BTC',
+        referidosTitulo: 'Referidos:',
+        referidosDesc: '1000 JHOAL por amigo',
+        historial: '📜 Historial Público',
         ranking: '🏆 Ranking Top 10',
-        enlaces: '🔗 Enlaces', jugar: 'Jugar', grupo: 'Grupo', soporte: 'Soporte',
+        enlaces: '🔗 Enlaces',
+        jugar: '🎮 Jugar',
+        grupo: '💬 Grupo',
+        soporte: '📩 Soporte',
         apoyar: '💝 Apoyá el proyecto (Red BSC): 0x9185...A1D3',
         aceptamos: 'Aceptamos BNB y cualquier token en la red BSC',
         aviso: 'JHOAL es un token de utilidad, no una inversión.'
       },
       en: {
-        heroTitle: '🏛 HORUS FAUCET',
         heroSub: '⚱ JHOAL Token Ecosystem - The Offering of the God Horus ⚱',
         heroDesc1: 'In the lands of the Nile, where the sun rises and the gods rule the destiny of men, JHOAL was born. It is not a simple token. It is the digital offering that flows through the entire Horus Faucet ecosystem.',
         heroDesc2: 'JHOAL is the official token of Horus Faucet, a Telegram Mini App where you can earn crypto FOR FREE without investing a single penny. No download needed: just open the bot on Telegram, enter the app and start earning.',
         heroDesc3: 'JHOAL is not just a coin. It is the key that opens the doors of the Horus Faucet ecosystem. With it you can play, plant, predict, win and withdraw to your personal wallet (MetaMask, Trust Wallet).',
         heroDesc4: 'In short: JHOAL is the heart of Horus Faucet, a Telegram Mini App that is bringing crypto to everyone, free and without complications.',
-        jugarBtn: 'PLAY NOW', grupoBtn: 'GROUP',
-        estadisticas: '📊 Live Statistics', jugadores: 'Total Players', enVivo: 'Live Now', jhoalCircular: 'JHOAL Circulating', jhoalQuemado: 'JHOAL Burned',
-        token: '💎 JHOAL Token', precio: 'Live Price', verContrato: 'View Contract', comprar: 'Buy', verPancake: 'View on PancakeSwap',
+        estadisticas: '📊 Live Statistics',
+        jugadores: 'Total Players',
+        enVivo: 'Live Now',
+        jhoalCircular: 'JHOAL Circulating',
+        jhoalQuemado: 'JHOAL Burned',
+        token: '💎 JHOAL',
+        precio: 'Live Price',
+        verContrato: '📍 View Contract',
+        comprar: '🥞 Buy',
+        verPancake: '🥞 View on PancakeSwap',
         prediccion: '🔮 PREDICTION OF HORUS',
-        predDesc1: '📈 Predict the <strong>exact price</strong> of BTC in 3 minutes',
-        predDesc2: '🎯 <strong>1 free prediction</strong> per round (watch an ad)',
-        predDesc3: '💰 Pool is split among winners by closeness',
-        predDesc4: '🔥 What is left is burned every 24h',
-        btcAhora: 'BTC Now', poolJHOAL: 'Pool JHOAL', ronda: 'Round',
+        predDesc: '📈 Predict the exact price of BTC in 3 minutes<br>🎯 1 free prediction per round (watch an ad)<br>💰 Pool is split among winners by closeness<br>🔥 What\'s left is burned every 24h',
+        btcAhora: 'BTC Now',
+        poolJHOAL: 'JHOAL Pool',
+        ronda: 'Round',
         comoGanar: '💰 How to Earn JHOAL?',
-        ganar1: '🚰 <strong>Faucet:</strong> 1 JHOAL every 30 minutes',
-        ganar2: '📺 <strong>Ads:</strong> 5 JHOAL per video',
-        ganar3: '🎲 <strong>Dice:</strong> Multiply your JHOAL (x1.1 to x10)',
-        ganar4: '🌱 <strong>Garden:</strong> Plant and harvest fruits',
-        ganar5: '🔮 <strong>Predictions:</strong> Predict BTC price',
-        ganar6: '🎁 <strong>Referrals:</strong> 1000 JHOAL per friend',
-        historial: '📜 Public History', cargando: 'Loading...',
+        faucetTitulo: 'Faucet:',
+        faucetDesc: '1 JHOAL every 30 minutes',
+        anunciosTitulo: 'Ads:',
+        anunciosDesc: '5 JHOAL per video',
+        dadosTitulo: 'Dice:',
+        dadosDesc: 'Multiply your JHOAL (x1.1 to x10)',
+        huertoTitulo: 'Garden:',
+        huertoDesc: 'Plant and harvest fruits',
+        toquesTitulo: 'Predictions:',
+        toquesDesc: 'Predict BTC price',
+        referidosTitulo: 'Referrals:',
+        referidosDesc: '1000 JHOAL per friend',
+        historial: '📜 Public History',
         ranking: '🏆 Top 10 Ranking',
-        enlaces: '🔗 Links', jugar: 'Play', grupo: 'Group', soporte: 'Support',
+        enlaces: '🔗 Links',
+        jugar: '🎮 Play',
+        grupo: '💬 Group',
+        soporte: '📩 Support',
         apoyar: '💝 Support the project (BSC Network): 0x9185...A1D3',
         aceptamos: 'We accept BNB and any token on BSC network',
         aviso: 'JHOAL is a utility token, not an investment.'
@@ -268,7 +303,7 @@
       document.getElementById('totalQuemado').textContent = formatearNumero(stats.totalQuemado);
 
       const price = await getJhoalPrice();
-      document.getElementById('precioJHOAL').textContent = price > 0 ? '$' + price.toFixed(9) : '--';
+      document.getElementById('precioJHOAL').textContent = price > 0 ? '$' + price.toFixed(8) : '--';
 
       const toques = await getToques();
       document.getElementById('btcPrice').textContent = toques.btcPrice > 0 ? '$' + toques.btcPrice.toLocaleString('en-US', {maximumFractionDigits: 0}) : '--';
@@ -307,18 +342,19 @@
       }
     }
 
-    function copiarDonacion(e) {
+    // ===== COPIAR DONACIÓN =====
+    function copiarDonacion() {
       navigator.clipboard.writeText(CONFIG.donaciones).then(() => {
-        const btn = e.target;
+        const btn = event.target;
         const original = btn.textContent;
         btn.textContent = '✅';
         setTimeout(() => { btn.textContent = original; }, 1500);
       });
     }
 
-    // Inicializar
+    // ===== INICIO =====
     document.getElementById('langBtn').textContent = idiomaActual === 'es' ? '🌐 EN' : '🌐 ES';
-    actualizarTextos();
+    setTimeout(actualizarTextos, 100);
     cargarTodo();
     setInterval(cargarTodo, 30000);
   </script>
