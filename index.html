@@ -10,65 +10,96 @@
 </head>
 <body>
   <div class="container">
-    
+
+    <!-- BOTÓN DE IDIOMA -->
+    <div style="text-align: right; margin-bottom: 10px;">
+      <button id="langBtn" onclick="toggleLang()" class="lang-btn">🇬🇧 EN</button>
+    </div>
+
     <!-- HEADER -->
     <header>
       <img src="images/logo.png" alt="Horus Faucet" class="logo" onerror="this.style.display='none'">
       <h1>HORUS FAUCET</h1>
-      <div class="subtitle">⚱ La ofrenda del Dios Horus ⚱</div>
+      <div class="subtitle" data-i18n="subtitle">⚱ La ofrenda del Dios Horus ⚱</div>
     </header>
 
     <!-- BANNER -->
     <img src="images/banner.jpg" alt="Horus Faucet Banner" class="banner" onerror="this.style.display='none'">
 
+    <!-- SOBRE EL PROYECTO -->
+    <section>
+      <h2 data-i18n="aboutTitle">🏛 HORUS FAUCET</h2>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <div style="font-size: 20px; color: #c77dff; margin-bottom: 6px;" data-i18n="aboutSub1">💎 Ecosistema JHOAL Token</div>
+        <div style="font-size: 14px; color: #a89060; font-style: italic;" data-i18n="aboutSub2">⚱ La Ofrenda del Dios Horus</div>
+      </div>
+      <div style="color: #f5f0e1; font-size: 14px; line-height: 1.9;">
+        <p style="margin-bottom: 16px;" data-i18n="aboutP1">
+          En las tierras del Nilo, donde nace el sol y los dioses gobiernan el destino de los hombres, nació JHOAL. No es un simple token. Es la ofrenda digital que fluye por todo el ecosistema de Horus Faucet.
+        </p>
+        <p style="margin-bottom: 16px;" data-i18n="aboutP2">
+          JHOAL es el token oficial de Horus Faucet, una Mini App de Telegram donde podés ganar criptomonedas GRATIS sin invertir un solo peso. No necesitás descargar nada: solo abrís el bot en Telegram, entrás a la app y empezás a ganar.
+        </p>
+        <p style="margin-bottom: 16px;" data-i18n="aboutP3">
+          🚰 <strong>LA FAUCET:</strong> Reclamá 1 JHOAL cada 30 minutos.<br>
+          🎲 <strong>LOS DADOS:</strong> Apostá y multiplicá tus JHOAL hasta x10.<br>
+          🔮 <strong>PREDICCIONES:</strong> Predecí el precio de BTC y ganá la pool.<br>
+          🌱 <strong>HUERTO:</strong> Plantá, regá y cosechá frutos en JHOAL.
+        </p>
+        <p style="margin-bottom: 16px;" data-i18n="aboutP4">
+          JHOAL no es solo una moneda. Es la llave que abre las puertas del ecosistema de Horus Faucet. Con él podés jugar, plantar, predecir, ganar y retirar a tu wallet personal (MetaMask, Trust Wallet).
+        </p>
+        <p style="margin-bottom: 16px;" data-i18n="aboutP5">
+          En resumen: JHOAL es el corazón de Horus Faucet, una Mini App de Telegram que está llevando las criptomonedas a todo el mundo, gratis y sin complicaciones.
+        </p>
+      </div>
+    </section>
+
     <!-- ESTADÍSTICAS EN VIVO -->
     <section>
-      <h2>📊 Estadísticas en Vivo</h2>
+      <h2 data-i18n="statsTitle">📊 Estadísticas en Vivo</h2>
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-value" id="totalJugadores">--</div>
-          <div class="stat-label">Jugadores Totales</div>
+          <div class="stat-label" data-i18n="statsPlayers">Jugadores Totales</div>
         </div>
         <div class="stat-card">
           <div class="stat-value" id="enVivo">--</div>
-          <div class="stat-label">En Vivo Ahora</div>
+          <div class="stat-label" data-i18n="statsOnline">En Vivo Ahora</div>
         </div>
         <div class="stat-card">
           <div class="stat-value" id="totalJHOAL">--</div>
-          <div class="stat-label">JHOAL Circular</div>
+          <div class="stat-label" data-i18n="statsCircular">JHOAL Circular</div>
         </div>
         <div class="stat-card">
           <div class="stat-value" id="totalQuemado">--</div>
-          <div class="stat-label">JHOAL Quemado</div>
+          <div class="stat-label" data-i18n="statsBurned">JHOAL Quemado</div>
         </div>
       </div>
     </section>
+
     <!-- EL TOKEN -->
     <section style="text-align: center;">
-      <h2>💎JHOAL</h2>
-      
+      <h2>💎 JHOAL</h2>
       <div style="margin: 20px 0;">
         <div id="precioJHOAL" style="font-size: 36px; font-weight: bold; color: #d4af37; text-shadow: 0 0 15px rgba(212, 175, 55, 0.8); margin-bottom: 8px;">--</div>
-        <div style="font-size: 12px; color: #a89060; letter-spacing: 3px; text-transform: uppercase;">Precio en Vivo</div>
+        <div style="font-size: 12px; color: #a89060; letter-spacing: 3px; text-transform: uppercase;" data-i18n="livePrice">Precio en Vivo</div>
       </div>
-
       <div style="margin-top: 24px;">
-        <a href="#" id="linkContrato" target="_blank" class="btn">📍 Ver Contrato</a>
-        <a href="#" id="linkPancake" target="_blank" class="btn btn-verde">🥞 Comprar</a>
+        <a href="#" id="linkContrato" target="_blank" class="btn" data-i18n="btnContract">📍 Ver Contrato</a>
+        <a href="#" id="linkPancake" target="_blank" class="btn btn-verde" data-i18n="btnBuy">🥞 Comprar</a>
       </div>
-
       <div style="margin-top: 20px;">
-        <a href="#" id="linkPancakeSmall" target="_blank" style="color: #a89060; font-size: 12px; text-decoration: none; letter-spacing: 1px;">
+        <a href="#" id="linkPancakeSmall" target="_blank" style="color: #a89060; font-size: 12px; text-decoration: none; letter-spacing: 1px;" data-i18n="btnPancake">
           🥞 Ver en PancakeSwap
         </a>
       </div>
     </section>
 
-    
-    <!-- PREDICCION DE HORUS -->
+    <!-- PREDICCIÓN DE HORUS -->
     <section>
-      <h2>🎯 PREDICCION DE HORUS</h2>
-      <p style="text-align: center; color: #a89060; font-size: 13px; margin-bottom: 16px;">
+      <h2 data-i18n="predTitle">🎯 Predicción de Horus</h2>
+      <p style="text-align: center; color: #a89060; font-size: 13px; margin-bottom: 16px;" data-i18n="predDesc">
         📈 Predecí el precio de BTC en 3 minutos<br>
         💰 Pool se reparte entre los ganadores según cercanía<br>
         🔥 Lo que sobra se quema cada 24h
@@ -76,73 +107,76 @@
       <div class="toques-info">
         <div class="toques-card">
           <div class="toques-value" id="btcPrice">--</div>
-          <div class="stat-label">BTC Ahora</div>
+          <div class="stat-label" data-i18n="btcNow">BTC Ahora</div>
         </div>
         <div class="toques-card">
           <div class="toques-value" id="toquesPool">--</div>
-          <div class="stat-label">Pool JHOAL</div>
+          <div class="stat-label" data-i18n="poolJHOAL">Pool JHOAL</div>
         </div>
         <div class="toques-card">
           <div class="toques-value" id="toquesRonda">--</div>
-          <div class="stat-label">Ronda</div>
+          <div class="stat-label" data-i18n="round">Ronda</div>
         </div>
       </div>
     </section>
 
     <!-- CÓMO GANAR -->
     <section>
-      <h2>💰 ¿Cómo Ganar JHOAL?</h2>
+      <h2 data-i18n="howTitle">💰 ¿Cómo Ganar JHOAL?</h2>
       <div style="text-align: center; margin-bottom: 20px;">
         <img src="images/huerto.jpg" alt="Huerto de Horus" style="max-width: 100%; border-radius: 12px; border: 2px solid #d4af37;" onerror="this.style.display='none'">
       </div>
-      <div style="font-size: 14px; line-height: 1.8; color: #f5f0e1;">
+      <div style="font-size: 14px; line-height: 1.8; color: #f5f0e1;" data-i18n="howList">
         🚰 <strong>Faucet:</strong> 1 JHOAL cada 30 minutos<br>
         📺 <strong>Anuncios:</strong> 5 JHOAL por video<br>
         🎲 <strong>Dados:</strong> Multiplicá tus JHOAL (x1.1 a x10)<br>
         🌱 <strong>Huerto:</strong> Plantá y cosechá frutos<br>
-        🔮 <strong>Toques:</strong> Predecí el precio de BTC<br>
+        🔮 <strong>Predicciones:</strong> Predecí el precio de BTC<br>
         🎁 <strong>Referidos:</strong> 1000 JHOAL por amigo
       </div>
     </section>
 
     <!-- HISTORIAL PÚBLICO -->
     <section>
-      <h2>📜 Historial Público</h2>
+      <h2 data-i18n="historyTitle">📜 Historial Público</h2>
       <div class="history-list" id="historyList">
-        <div style="text-align: center; color: #6b5a3a; padding: 20px;">Cargando historial...</div>
+        <div style="text-align: center; color: #6b5a3a; padding: 20px;" data-i18n="loading">Cargando historial...</div>
       </div>
     </section>
 
     <!-- RANKING -->
     <section>
-      <h2>🏆 Ranking Top 10</h2>
+      <h2 data-i18n="rankTitle">🏆 Ranking Top 10</h2>
       <div id="rankingList">
-        <div style="text-align: center; color: #6b5a3a; padding: 20px;">Cargando ranking...</div>
+        <div style="text-align: center; color: #6b5a3a; padding: 20px;" data-i18n="loading">Cargando ranking...</div>
       </div>
     </section>
 
     <!-- ENLACES -->
     <section>
-      <h2>🔗 Enlaces</h2>
+      <h2 data-i18n="linksTitle">🔗 Enlaces</h2>
       <div style="text-align: center;">
-        <a href="https://t.me/Jhoal_faucetbot" target="_blank" class="btn">🎮 Jugar</a>
-        <a href="https://t.me/horusfaucet" target="_blank" class="btn btn-azul">💬 Grupo</a>
-        <a href="https://t.me/JhoalSupportbot" target="_blank" class="btn btn-verde">📩 Soporte</a>
+        <a href="https://t.me/Jhoal_faucetbot" target="_blank" class="btn" data-i18n="btnPlay">🎮 Jugar</a>
+        <a href="https://t.me/horusfaucet" target="_blank" class="btn btn-azul" data-i18n="btnGroup">💬 Grupo</a>
+        <a href="https://t.me/JhoalSupportbot" target="_blank" class="btn btn-verde" data-i18n="btnSupport">📩 Soporte</a>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
       <div style="margin-bottom: 10px;">
-        <a href="#" id="footerBscScan" target="_blank">📍 Contrato</a>
-        <a href="#" id="footerPancake" target="_blank">🥞 PancakeSwap</a>
+        <a href="#" id="footerBscScan" target="_blank" data-i18n="footerContract">📍 Contrato</a>
+        <a href="#" id="footerPancake" target="_blank" data-i18n="footerPancake">🥞 PancakeSwap</a>
       </div>
       <div>🏛 Horus Faucet © 2026</div>
       <div class="donaciones">
-        💝 Apoyá el proyecto: (Red BSC)0x9185...A1D3 
+        💝 <span data-i18n="donate">Apoyá el proyecto</span>: (BSC) 0x9185...A1D3
         <button class="copy-btn" onclick="copiarDonacion()">📋</button>
       </div>
-      <div style="margin-top: 8px; font-size: 11px; color: #6b5a3a;">
+      <div style="font-size: 10px; color: #6b5a3a; margin-top: 4px;" data-i18n="donateNote">
+        Aceptamos BNB y cualquier token en la red BSC
+      </div>
+      <div style="margin-top: 8px; font-size: 11px; color: #6b5a3a;" data-i18n="disclaimer">
         JHOAL es un token de utilidad, no una inversión.
       </div>
     </footer>
@@ -153,11 +187,32 @@
   <script src="config.js"></script>
   <script src="api.js"></script>
   <script>
+    // ===== IDIOMA =====
+    let currentLang = localStorage.getItem('horusLang') || 'es';
+
+    function applyLang() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) {
+          el.innerHTML = TRANSLATIONS[currentLang][key];
+        }
+      });
+      document.getElementById('langBtn').textContent = currentLang === 'es' ? '🇬🇧 EN' : '🇪🇸 ES';
+      document.documentElement.lang = currentLang;
+    }
+
+    function toggleLang() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      localStorage.setItem('horusLang', currentLang);
+      applyLang();
+    }
+
     // ===== CARGAR DATOS =====
     async function cargarTodo() {
       // Configurar links
       document.getElementById('linkContrato').href = CONFIG.bscscan;
       document.getElementById('linkPancake').href = CONFIG.pancakeswap;
+      document.getElementById('linkPancakeSmall').href = CONFIG.pancakeswap;
       document.getElementById('footerBscScan').href = CONFIG.bscscan;
       document.getElementById('footerPancake').href = CONFIG.pancakeswap;
 
@@ -167,7 +222,6 @@
       document.getElementById('enVivo').textContent = formatearNumero(stats.enVivo);
       document.getElementById('totalJHOAL').textContent = formatearNumero(stats.totalJHOAL);
       document.getElementById('totalQuemado').textContent = formatearNumero(stats.totalQuemado);
-      document.getElementById('poolToques').textContent = formatearNumero(stats.poolActual);
 
       // Cargar precio JHOAL
       const price = await getJhoalPrice();
@@ -183,7 +237,7 @@
       const history = await getHistory();
       const historyList = document.getElementById('historyList');
       if (history.length === 0) {
-        historyList.innerHTML = '<div style="text-align: center; color: #6b5a3a; padding: 20px;">No hay eventos aún</div>';
+        historyList.innerHTML = '<div style="text-align: center; color: #6b5a3a; padding: 20px;">' + TRANSLATIONS[currentLang].noEvents + '</div>';
       } else {
         historyList.innerHTML = history.map(h => `
           <div class="history-item">
@@ -200,7 +254,7 @@
       const ranking = await getRanking();
       const rankingList = document.getElementById('rankingList');
       if (ranking.length === 0) {
-        rankingList.innerHTML = '<div style="text-align: center; color: #6b5a3a; padding: 20px;">Sin datos aún</div>';
+        rankingList.innerHTML = '<div style="text-align: center; color: #6b5a3a; padding: 20px;">' + TRANSLATIONS[currentLang].noData + '</div>';
       } else {
         const medals = ['🥇', '🥈', '🥉'];
         rankingList.innerHTML = ranking.map(r => `
@@ -223,7 +277,8 @@
       });
     }
 
-    // ===== CARGAR AL INICIO =====
+    // ===== INICIAR =====
+    applyLang();
     cargarTodo();
 
     // ===== ACTUALIZAR CADA 30 SEGUNDOS =====
