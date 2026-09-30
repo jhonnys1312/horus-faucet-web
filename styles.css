@@ -296,21 +296,23 @@ footer a {
 }
 
 .copy-btn {
-  background: rgba(212, 175, 55, 0.3);
-  border: 1px solid rgba(212, 175, 55, 0.7);
-  border-radius: 6px;
-  padding: 5px 12px;
+  background: linear-gradient(135deg, #d4af37, #8b6f1a);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 13px;
-  color: #d4af37;
-  margin-left: 8px;
+  font-size: 12px;
+  color: #0a0605;
   font-weight: bold;
-  transition: background 0.2s;
-  vertical-align: middle;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+  transition: transform 0.2s;
+  width: auto;
+  max-width: 100%;
 }
 
-.copy-btn:hover {
-  background: rgba(212, 175, 55, 0.5);
+.copy-btn:active {
+  transform: scale(0.95);
 }
 
 /* ===== RESPONSIVE ===== */
