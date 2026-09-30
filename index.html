@@ -154,19 +154,19 @@
         <a href="#" id="footerPancake" target="_blank">🥞 PancakeSwap</a>
       </div>
       <div>🏛 Horus Faucet © 2026</div>
-      <div class="donaciones">
-  <span data-i18n="apoyar">💝 Apoyá el proyecto :</span>
-  <span style="font-family: monospace; color: #a89060; word-break: break-all;
-  <button class="copy-btn" onclick="copiarDonacion()">📋</button>
+     <div class="donaciones" style="margin-top: 16px; text-align: center;">
+  <div style="color: #d4af37; font-weight: bold; margin-bottom: 8px;">
+    💝 Apoyá el proyecto:
+  </div>
+  <div style="font-family: monospace; color: #a89060; font-size: 11px; word-break: break-all; padding: 8px 12px; background: rgba(0,0,0,0.4); border: 1px solid rgba(212,175,55,0.3); border-radius: 8px; margin-bottom: 10px;">
+    0x9185F62bfd0367Db622f371b594e5579286Ea1D3
+  </div>
+  <button class="copy-btn" onclick="copiarDonacion(event)">📋 COPIAR DIRECCIÓN</button>
 </div>
-      
-      <div style="font-size: 10px; color: #6b5a3a; margin-top: 4px;" data-i18n="aceptamos">
-        
-      </div>
-      
-      <div style="margin-top: 8px; font-size: 11px; color: #6b5a3a;" data-i18n="aviso">
-        JHOAL es un token de utilidad, no una inversión.
-      </div>
+
+<div style="margin-top: 12px; font-size: 11px; color: #6b5a3a;" data-i18n="aviso">
+  JHOAL es un token de utilidad, no una inversión.
+</div>
     </footer>
 
   </div>
@@ -344,14 +344,50 @@
     }
 
     // ===== COPIAR DONACIÓN =====
-    function copiarDonacion() {
-      navigator.clipboard.writeText(CONFIG.donaciones).then(() => {
-        const btn = event.target;
-        const original = btn.textContent;
-        btn.textContent = '✅';
-        setTimeout(() => { btn.textContent = original; }, 1500);
-      });
-    }
+    function copiarDonacion(event) {
+  const direccion = '0x9185F62bfd0367Db622f371b594e5579286Ea1D3';
+  
+  // Intento 1: Clipboard API (funciona en HTTPS)
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(direccion).then(() => {
+      mostrarCopiado(event);
+    }).catch(() => {
+      copiarFallback(direccion, event);
+    });
+  } else {
+    // Fallback para navegadores viejos
+    copiarFallback(direccion, event);
+  }
+}
+
+function copiarFallback(texto, event) {
+  const textarea = document.createElement('textarea');
+  textarea.value = texto;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand('copy');
+    mostrarCopiado(event);
+  } catch (err) {
+    alert('No se pudo copiar. Copiá manualmente: ' + texto);
+  }
+  document.body.removeChild(textarea);
+}
+
+function mostrarCopiado(event) {
+  const btn = event.target;
+  const original = btn.innerHTML;
+  btn.innerHTML = '✅ ¡COPIADO!';
+  btn.style.background = 'linear-gradient(135deg, #00c853, #00843d)';
+  btn.style.color = 'white';
+  setTimeout(() => {
+    btn.innerHTML = original;
+    btn.style.background = '';
+    btn.style.color = '';
+  }, 2000);
+}
 
     // ===== INICIO =====
     document.getElementById('langBtn').textContent = idiomaActual === 'es' ? '🌐 EN' : '🌐 ES';
