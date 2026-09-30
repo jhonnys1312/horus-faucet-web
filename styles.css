@@ -260,3 +260,24 @@ footer a {
   section { padding: 16px; }
   .btn { padding: 10px 16px; font-size: 11px; }
 }
+/* ===== BOTÓN DE IDIOMA ===== */
+.lang-btn {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 8px;
+  color: #d4af37;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+}
+
+.lang-btn:hover {
+  background: rgba(212, 175, 55, 0.3);
+}
+
+.lang-btn:active {
+  transform: scale(0.95);
+}
