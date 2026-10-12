@@ -27,9 +27,9 @@ async function getStats() {
       totalJHOAL += parseFloat(u.wallet_balance || 0);
     });
     
-    // Total quemado
-    const { data: burns } = await sb.from('burn_wallet').select('amount');
-    const totalQuemado = (burns || []).reduce((s, b) => s + parseFloat(b.amount || 0), 0);
+    // ✅ FIX: Total quemado usando RPC (sin límite de 1000 filas)
+    const { data: totalBurnedData, error: burnErr } = await sb.rpc('get_total_burned');
+    const totalQuemado = burnErr ? 0 : parseFloat(totalBurnedData || 0);
     
     // Pool actual
     const { data: lastRound } = await sb
@@ -50,6 +50,22 @@ async function getStats() {
   } catch (e) {
     console.error('Error getStats:', e);
     return { totalJugadores: 0, enVivo: 0, totalJHOAL: 0, totalQuemado: 0, poolActual: 0 };
+  }
+}
+
+// ===== ESTADÍSTICAS DE LA CULEBRITA =====
+async function getCulebritaStats() {
+  try {
+    const res = await fetch('https://culebrita-jhoal.fly.dev/room-status', { cache: 'no-store' });
+    const data = await res.json();
+    return {
+      players: data.players || 0,
+      maxPlayers: data.maxPlayers || 30,
+      active: data.active || false
+    };
+  } catch (e) {
+    console.error('Error getCulebritaStats:', e);
+    return { players: 0, maxPlayers: 30, active: false };
   }
 }
 
@@ -87,7 +103,9 @@ async function getHistory() {
         'prediction_win': { emoji: '🏆', desc: 'Ganó predicción' },
         'prediction_bet': { emoji: '🔮', desc: 'Predicción' },
         'referral_reward': { emoji: '🎁', desc: 'Referido' },
-        'burn': { emoji: '🔥', desc: 'Quema' }
+        'burn': { emoji: '🔥', desc: 'Quema' },
+        'game_culebrita': { emoji: '🐍', desc: 'Culebrita' },
+        'skill_purchase': { emoji: '🛒', desc: 'Compra skill' }
       };
       
       if (types[h.type]) {
