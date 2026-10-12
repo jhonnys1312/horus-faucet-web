@@ -53,6 +53,10 @@
           <div class="stat-value" id="totalQuemado">--</div>
           <div class="stat-label" data-i18n="jhoalQuemado">JHOAL Quemado</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-value" id="culebritaJugadores">--</div>
+          <div class="stat-label" data-i18n="culebritaEnVivo">🐍 En Culebrita</div>
+        </div>
       </div>
     </section>
 <!-- BANNER ONCLICKA -->
@@ -106,6 +110,47 @@
       </div>
     </section>
 
+    <!-- ===== CULEBRITA ===== -->
+    <section>
+      <h2 data-i18n="culebrita">🐍 Culebrita Multijugador</h2>
+      
+      <div style="text-align: center; margin-bottom: 20px;">
+        <img src="images/culebrita.jpg" alt="Culebrita de Horus" style="max-width: 100%; border-radius: 12px; border: 2px solid #9b59b6;" onerror="this.style.display='none'">
+      </div>
+
+      <div style="text-align: center; color: #f5f0e1; font-size: 13px; line-height: 1.8; margin-bottom: 20px;">
+        <p data-i18n="culebritaDesc">
+          📺 Mirá un anuncio y entrá a la sala<br>
+          ⏰ 10 minutos de juego por entrada<br>
+          🪙 Comé tokens JHOAL y crecé<br>
+          💀 Si morís, re-entrás mientras te quede tiempo<br>
+          🏆 Los JHOAL que comas se acreditan al terminar<br>
+          ⚔️ Compra skills de Ataque, Defensa e Imán
+        </p>
+      </div>
+
+      <div class="toques-info">
+        <div class="toques-card">
+          <div class="toques-value" id="culebritaSala">--</div>
+          <div class="stat-label" data-i18n="culebritaJugadoresLabel">En Sala</div>
+        </div>
+        <div class="toques-card">
+          <div class="toques-value" id="culebritaMaxPlayers">30</div>
+          <div class="stat-label" data-i18n="culebritaMaxLabel">Máx Jugadores</div>
+        </div>
+        <div class="toques-card">
+          <div class="toques-value" id="culebritaDuracion">10 min</div>
+          <div class="stat-label" data-i18n="culebritaDuracionLabel">Duración</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://t.me/Jhoal_faucetbot" target="_blank" class="btn btn-verde" data-i18n="jugarCulebrita" style="background: linear-gradient(135deg, #9b59b6, #6c3483);">
+          🐍 Jugar Culebrita
+        </a>
+      </div>
+    </section>
+
     <!-- ===== ¿CÓMO GANAR JHOAL? ===== -->
     <section>
       <h2 data-i18n="comoGanar">💰 ¿Cómo Ganar JHOAL?</h2>
@@ -120,6 +165,7 @@
         <p>🎲 <strong data-i18n="dadosTitulo">Dados:</strong> <span data-i18n="dadosDesc">Multiplicá tus JHOAL (x1.1 a x10)</span></p>
         <p>🌱 <strong data-i18n="huertoTitulo">Huerto:</strong> <span data-i18n="huertoDesc">Plantá y cosechá frutos</span></p>
         <p>🔮 <strong data-i18n="toquesTitulo">Predicciones:</strong> <span data-i18n="toquesDesc">Predecí el precio de BTC</span></p>
+        <p>🐍 <strong data-i18n="culebritaTitulo">Culebrita:</strong> <span data-i18n="culebritaDescCorta">Jugá multijugador y comé JHOAL</span></p>
         <p>🎁 <strong data-i18n="referidosTitulo">Referidos:</strong> <span data-i18n="referidosDesc">1000 JHOAL por amigo</span></p>
       </div>
     </section>
@@ -193,6 +239,7 @@
         enVivo: 'En Vivo Ahora',
         jhoalCircular: 'JHOAL Circular',
         jhoalQuemado: 'JHOAL Quemado',
+        culebritaEnVivo: '🐍 En Culebrita',
         token: '💎JHOAL',
         precio: 'Precio en Vivo',
         verContrato: '📍 Ver Contrato',
@@ -203,6 +250,12 @@
         btcAhora: 'BTC Ahora',
         poolJHOAL: 'Pool JHOAL',
         ronda: 'Ronda',
+        culebrita: '🐍 Culebrita Multijugador',
+        culebritaDesc: '📺 Mirá un anuncio y entrá a la sala<br>⏰ 10 minutos de juego por entrada<br>🪙 Comé tokens JHOAL y crecé<br>💀 Si morís, re-entrás mientras te quede tiempo<br>🏆 Los JHOAL que comas se acreditan al terminar<br>⚔️ Compra skills de Ataque, Defensa e Imán',
+        culebritaJugadoresLabel: 'En Sala',
+        culebritaMaxLabel: 'Máx Jugadores',
+        culebritaDuracionLabel: 'Duración',
+        jugarCulebrita: '🐍 Jugar Culebrita',
         comoGanar: '💰 ¿Cómo Ganar JHOAL?',
         faucetTitulo: 'Faucet:',
         faucetDesc: '1 JHOAL cada 30 minutos',
@@ -214,6 +267,8 @@
         huertoDesc: 'Plantá y cosechá frutos',
         toquesTitulo: 'Predicciones:',
         toquesDesc: 'Predecí el precio de BTC',
+        culebritaTitulo: 'Culebrita:',
+        culebritaDescCorta: 'Jugá multijugador y comé JHOAL',
         referidosTitulo: 'Referidos:',
         referidosDesc: '1000 JHOAL por amigo',
         historial: '📜 Historial Público',
@@ -237,6 +292,7 @@
         enVivo: 'Live Now',
         jhoalCircular: 'JHOAL Circulating',
         jhoalQuemado: 'JHOAL Burned',
+        culebritaEnVivo: '🐍 In Snake',
         token: '💎 JHOAL',
         precio: 'Live Price',
         verContrato: '📍 View Contract',
@@ -247,6 +303,12 @@
         btcAhora: 'BTC Now',
         poolJHOAL: 'JHOAL Pool',
         ronda: 'Round',
+        culebrita: '🐍 Multiplayer Snake',
+        culebritaDesc: '📺 Watch an ad and join the room<br>⏰ 10 minutes of play per entry<br>🪙 Eat JHOAL tokens and grow<br>💀 If you die, re-enter while you have time<br>🏆 JHOAL you eat is credited at the end<br>⚔️ Buy Attack, Defense and Magnet skills',
+        culebritaJugadoresLabel: 'In Room',
+        culebritaMaxLabel: 'Max Players',
+        culebritaDuracionLabel: 'Duration',
+        jugarCulebrita: '🐍 Play Snake',
         comoGanar: '💰 How to Earn JHOAL?',
         faucetTitulo: 'Faucet:',
         faucetDesc: '1 JHOAL every 30 minutes',
@@ -258,6 +320,8 @@
         huertoDesc: 'Plant and harvest fruits',
         toquesTitulo: 'Predictions:',
         toquesDesc: 'Predict BTC price',
+        culebritaTitulo: 'Snake:',
+        culebritaDescCorta: 'Play multiplayer and eat JHOAL',
         referidosTitulo: 'Referrals:',
         referidosDesc: '1000 JHOAL per friend',
         historial: '📜 Public History',
@@ -305,6 +369,12 @@
       document.getElementById('enVivo').textContent = formatearNumero(stats.enVivo);
       document.getElementById('totalJHOAL').textContent = formatearNumero(stats.totalJHOAL);
       document.getElementById('totalQuemado').textContent = formatearNumero(stats.totalQuemado);
+
+      // ✅ NUEVO: Stats de la culebrita
+      const culebritaStats = await getCulebritaStats();
+      document.getElementById('culebritaJugadores').textContent = culebritaStats.players;
+      document.getElementById('culebritaSala').textContent = culebritaStats.players;
+      document.getElementById('culebritaMaxPlayers').textContent = culebritaStats.maxPlayers;
 
       const price = await getJhoalPrice();
       document.getElementById('precioJHOAL').textContent = price > 0 ? '$' + price.toFixed(8) : '--';
